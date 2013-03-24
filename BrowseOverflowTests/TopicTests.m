@@ -11,18 +11,40 @@
 
 @implementation TopicTests
 
+- (void)setUp {
+ 
+    self.topic = [[Topic alloc] initWithName: @"iPhone" tag: @"iphone"];
+    
+}
+
+- (void)tearDown {
+    
+    self.topic = nil;
+
+}
+
 - (void)testThatTopicExists {
     
-    Topic *newTopic = [[Topic alloc] init];
-    STAssertNotNil(newTopic, @"should be able to create a Topic instance");
+    STAssertNotNil(self.topic, @"should be able to create a Topic instance");
     
 }
 
 - (void)testThatTopicCanBeNamed {
     
-    Topic *namedTopic = [[Topic alloc] initWithName: @"iPhone"];
-    STAssertEqualObjects(namedTopic.name, @"iPhone", @"the Topic should have the name I gave it");
+    STAssertEqualObjects(self.topic.name, @"iPhone", @"the Topic should have the name I gave it");
     
+}
+
+- (void)testThatTopicHasATag {
+    
+    STAssertEqualObjects(self.topic.tag, @"iphone", @"Topics need to have tags");
+    
+}
+
+- (void)testForAListOfQuestions {
+    
+    STAssertTrue([[self.topic recentQuestions] isKindOfClass: [NSArray class]], @"Topics should provide a list of recent questions");
+
 }
 
 @end

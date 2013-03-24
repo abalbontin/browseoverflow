@@ -11,7 +11,12 @@
 @interface Topic : NSObject
 
 @property (readonly) NSString *name;
+@property (readonly) NSString *tag;
 
-- (id)initWithName:(NSString *)newName;
+// Metodo que inicializa un Topic con un nombre y un tag.
+- (id)initWithName:(NSString *)newName tag:(NSString *)newTag;
+
+// Metodoq que devuelve las 20 Question mas recientes de un Topic.
+- (NSArray *)recentQuestions;
 
 @end
