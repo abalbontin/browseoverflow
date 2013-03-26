@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		57CFCDD1170234BA00DEEB87 /* QuestionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CFCDD0170234BA00DEEB87 /* QuestionTests.m */; };
+		57CFCDD41702354700DEEB87 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CFCDD31702354700DEEB87 /* Question.m */; };
+		57CFCDD51702354700DEEB87 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CFCDD31702354700DEEB87 /* Question.m */; };
 		57E39AEC16FF8E1D00D686E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E39AEB16FF8E1D00D686E9 /* UIKit.framework */; };
 		57E39AEE16FF8E1D00D686E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E39AED16FF8E1D00D686E9 /* Foundation.framework */; };
 		57E39AF016FF8E1D00D686E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E39AEF16FF8E1D00D686E9 /* CoreGraphics.framework */; };
@@ -40,6 +43,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		57CFCDCF170234BA00DEEB87 /* QuestionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionTests.h; sourceTree = "<group>"; };
+		57CFCDD0170234BA00DEEB87 /* QuestionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTests.m; sourceTree = "<group>"; };
+		57CFCDD21702354700DEEB87 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		57CFCDD31702354700DEEB87 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		57E39AE816FF8E1D00D686E9 /* BrowseOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowseOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E39AEB16FF8E1D00D686E9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		57E39AED16FF8E1D00D686E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -160,6 +167,8 @@
 				57E39B1C16FF8E1E00D686E9 /* Supporting Files */,
 				57E39B2C16FF97DE00D686E9 /* TopicTests.h */,
 				57E39B2D16FF97DE00D686E9 /* TopicTests.m */,
+				57CFCDCF170234BA00DEEB87 /* QuestionTests.h */,
+				57CFCDD0170234BA00DEEB87 /* QuestionTests.m */,
 			);
 			path = BrowseOverflowTests;
 			sourceTree = "<group>";
@@ -176,6 +185,8 @@
 		57E39B2F16FF984500D686E9 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				57CFCDD21702354700DEEB87 /* Question.h */,
+				57CFCDD31702354700DEEB87 /* Question.m */,
 				57E39B3016FF985400D686E9 /* Topic.h */,
 				57E39B3116FF985400D686E9 /* Topic.m */,
 			);
@@ -298,6 +309,7 @@
 				57E39B0516FF8E1D00D686E9 /* MasterViewController.m in Sources */,
 				57E39B0816FF8E1D00D686E9 /* DetailViewController.m in Sources */,
 				57E39B3216FF985400D686E9 /* Topic.m in Sources */,
+				57CFCDD41702354700DEEB87 /* Question.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +319,8 @@
 			files = (
 				57E39B2E16FF97DE00D686E9 /* TopicTests.m in Sources */,
 				57E39B3316FF985400D686E9 /* Topic.m in Sources */,
+				57CFCDD1170234BA00DEEB87 /* QuestionTests.m in Sources */,
+				57CFCDD51702354700DEEB87 /* Question.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
