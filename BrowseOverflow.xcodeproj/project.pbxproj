@@ -10,6 +10,9 @@
 		54DE616B1703567F00DC5F7B /* PersonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DE616A1703567F00DC5F7B /* PersonTests.m */; };
 		54DE616E170358B400DC5F7B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DE616D170358B400DC5F7B /* Person.m */; };
 		54DE616F170358B400DC5F7B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DE616D170358B400DC5F7B /* Person.m */; };
+		54DE6172170367F600DC5F7B /* AnswerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DE6171170367F600DC5F7B /* AnswerTests.m */; };
+		54DE6175170368A500DC5F7B /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DE6174170368A500DC5F7B /* Answer.m */; };
+		54DE6176170368A500DC5F7B /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DE6174170368A500DC5F7B /* Answer.m */; };
 		57CFCDD1170234BA00DEEB87 /* QuestionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CFCDD0170234BA00DEEB87 /* QuestionTests.m */; };
 		57CFCDD41702354700DEEB87 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CFCDD31702354700DEEB87 /* Question.m */; };
 		57CFCDD51702354700DEEB87 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CFCDD31702354700DEEB87 /* Question.m */; };
@@ -50,6 +53,10 @@
 		54DE616A1703567F00DC5F7B /* PersonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTests.m; sourceTree = "<group>"; };
 		54DE616C170358B400DC5F7B /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
 		54DE616D170358B400DC5F7B /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		54DE6170170367F600DC5F7B /* AnswerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerTests.h; sourceTree = "<group>"; };
+		54DE6171170367F600DC5F7B /* AnswerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerTests.m; sourceTree = "<group>"; };
+		54DE6173170368A500DC5F7B /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Answer.h; sourceTree = "<group>"; };
+		54DE6174170368A500DC5F7B /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answer.m; sourceTree = "<group>"; };
 		57CFCDCF170234BA00DEEB87 /* QuestionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionTests.h; sourceTree = "<group>"; };
 		57CFCDD0170234BA00DEEB87 /* QuestionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTests.m; sourceTree = "<group>"; };
 		57CFCDD21702354700DEEB87 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
@@ -171,6 +178,8 @@
 		57E39B1B16FF8E1E00D686E9 /* BrowseOverflowTests */ = {
 			isa = PBXGroup;
 			children = (
+				54DE6170170367F600DC5F7B /* AnswerTests.h */,
+				54DE6171170367F600DC5F7B /* AnswerTests.m */,
 				54DE61691703567F00DC5F7B /* PersonTests.h */,
 				54DE616A1703567F00DC5F7B /* PersonTests.m */,
 				57CFCDCF170234BA00DEEB87 /* QuestionTests.h */,
@@ -194,6 +203,8 @@
 		57E39B2F16FF984500D686E9 /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
+				54DE6173170368A500DC5F7B /* Answer.h */,
+				54DE6174170368A500DC5F7B /* Answer.m */,
 				54DE616C170358B400DC5F7B /* Person.h */,
 				54DE616D170358B400DC5F7B /* Person.m */,
 				57CFCDD21702354700DEEB87 /* Question.h */,
@@ -322,6 +333,7 @@
 				57E39B3216FF985400D686E9 /* Topic.m in Sources */,
 				57CFCDD41702354700DEEB87 /* Question.m in Sources */,
 				54DE616E170358B400DC5F7B /* Person.m in Sources */,
+				54DE6175170368A500DC5F7B /* Answer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,6 +347,8 @@
 				57CFCDD51702354700DEEB87 /* Question.m in Sources */,
 				54DE616B1703567F00DC5F7B /* PersonTests.m in Sources */,
 				54DE616F170358B400DC5F7B /* Person.m in Sources */,
+				54DE6172170367F600DC5F7B /* AnswerTests.m in Sources */,
+				54DE6176170368A500DC5F7B /* Answer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
