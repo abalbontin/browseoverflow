@@ -7,6 +7,7 @@
 //
 
 #import "Topic.h"
+#import "Question.h"
 
 @implementation Topic
 
@@ -17,6 +18,7 @@
     
         _name = [newName copy];
         _tag = [newTag copy];
+        _questions = [[NSArray alloc] init];
         
     }
     
@@ -27,8 +29,37 @@
 // Metodoq que devuelve las 20 Question mas recientes de un Topic.
 - (NSArray *)recentQuestions {
     
-    return [NSArray array];
+    return [self sortQuestionsLatestFirst:self.questions];
     
+}
+
+- (void)addQuestion:(Question *)question {
+        
+    NSArray *newQuestions = [self.questions arrayByAddingObject:question];
+    
+    if ([newQuestions count] > 20) {
+        
+        newQuestions = [self sortQuestionsLatestFirst:newQuestions];
+        
+        newQuestions = [newQuestions subarrayWithRange:NSMakeRange(0, 20)];
+        
+    }
+    
+    self.questions = newQuestions;
+    
+}
+
+- (NSArray *)sortQuestionsLatestFirst:(NSArray *)questionList {
+    
+    return [questionList sortedArrayUsingComparator:^(id obj1, id obj2) {
+        
+        Question *q1 = (Question *)obj1;
+        Question *q2 = (Question *)obj2;
+        
+        return [q2.date compare: q1.date];
+        
+    }];
+
 }
 
 @end
