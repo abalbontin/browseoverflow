@@ -13,5 +13,7 @@
 @interface AnswerTests : SenTestCase
 
 @property Answer *answer;
+@property Answer *otherAnswer;
+
 
 @end

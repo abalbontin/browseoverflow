@@ -19,6 +19,10 @@
     self.answer.person = [[Person alloc] initWithName: @"Graham Lee" avatarLocation: @"http://example.com/avatar.png"];
     self.answer.score = 42;
     
+    self.otherAnswer = [[Answer alloc] init];
+    self.otherAnswer.text = @"I have the answer you need";
+    self.otherAnswer.score = 42;
+    
 }
 
 - (void)tearDown {
@@ -54,6 +58,32 @@
 - (void)testAnswerHasAScore {
     
     STAssertTrue(self.answer.score == 42, @"Answer's score can be retrieved");
+    
+}
+
+- (void)testAcceptedAnswerComesBeforeUnaccepted {
+    
+    self.otherAnswer.accepted = YES;
+    self.otherAnswer.score = self.answer.score + 10;
+    
+    STAssertEquals([self.answer compare:self.otherAnswer], NSOrderedDescending, @"Accepted answer should come first");
+    STAssertEquals([self.otherAnswer compare:self.answer], NSOrderedAscending, @"Unaccepted answer should come last");
+    
+}
+
+- (void)testAnswersWithEqualScoresCompareEqually {
+    
+    STAssertEquals([self.answer compare:self.otherAnswer], NSOrderedSame, @"Both answers of equal rank");
+    STAssertEquals([self.otherAnswer compare:self.answer], NSOrderedSame, @"Each answer has the same rank");
+    
+}
+
+- (void)testLowerScoringAnswerComesAfterHigher {
+    
+    self.otherAnswer.score = self.answer.score + 10;
+    
+    STAssertEquals([self.answer compare:self.otherAnswer], NSOrderedDescending, @"Higher score comes first");
+    STAssertEquals([self.otherAnswer compare:self.answer], NSOrderedAscending, @"Lower score comes last");
     
 }
 

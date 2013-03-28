@@ -9,10 +9,12 @@
 #import <SenTestingKit/SenTestingKit.h>
 
 @class Question;
+@class Answer;
 
 @interface QuestionTests : SenTestCase
     
 @property Question *question;
-
+@property Answer *lowScore;
+@property Answer *highScore;
 
 @end
