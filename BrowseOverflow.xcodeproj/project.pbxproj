@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		54DE616B1703567F00DC5F7B /* PersonTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DE616A1703567F00DC5F7B /* PersonTests.m */; };
+		54DE616E170358B400DC5F7B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DE616D170358B400DC5F7B /* Person.m */; };
+		54DE616F170358B400DC5F7B /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DE616D170358B400DC5F7B /* Person.m */; };
+		54DE6172170367F600DC5F7B /* AnswerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DE6171170367F600DC5F7B /* AnswerTests.m */; };
+		54DE6175170368A500DC5F7B /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DE6174170368A500DC5F7B /* Answer.m */; };
+		54DE6176170368A500DC5F7B /* Answer.m in Sources */ = {isa = PBXBuildFile; fileRef = 54DE6174170368A500DC5F7B /* Answer.m */; };
+		57CFCDD1170234BA00DEEB87 /* QuestionTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CFCDD0170234BA00DEEB87 /* QuestionTests.m */; };
+		57CFCDD41702354700DEEB87 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CFCDD31702354700DEEB87 /* Question.m */; };
+		57CFCDD51702354700DEEB87 /* Question.m in Sources */ = {isa = PBXBuildFile; fileRef = 57CFCDD31702354700DEEB87 /* Question.m */; };
 		57E39AEC16FF8E1D00D686E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E39AEB16FF8E1D00D686E9 /* UIKit.framework */; };
 		57E39AEE16FF8E1D00D686E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E39AED16FF8E1D00D686E9 /* Foundation.framework */; };
 		57E39AF016FF8E1D00D686E9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E39AEF16FF8E1D00D686E9 /* CoreGraphics.framework */; };
@@ -24,7 +33,9 @@
 		57E39B1716FF8E1E00D686E9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E39AEB16FF8E1D00D686E9 /* UIKit.framework */; };
 		57E39B1816FF8E1E00D686E9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57E39AED16FF8E1D00D686E9 /* Foundation.framework */; };
 		57E39B2016FF8E1E00D686E9 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 57E39B1E16FF8E1E00D686E9 /* InfoPlist.strings */; };
-		57E39B2316FF8E1E00D686E9 /* BrowseOverflowTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E39B2216FF8E1E00D686E9 /* BrowseOverflowTests.m */; };
+		57E39B2E16FF97DE00D686E9 /* TopicTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E39B2D16FF97DE00D686E9 /* TopicTests.m */; };
+		57E39B3216FF985400D686E9 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E39B3116FF985400D686E9 /* Topic.m */; };
+		57E39B3316FF985400D686E9 /* Topic.m in Sources */ = {isa = PBXBuildFile; fileRef = 57E39B3116FF985400D686E9 /* Topic.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +49,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		54DE61691703567F00DC5F7B /* PersonTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PersonTests.h; sourceTree = "<group>"; };
+		54DE616A1703567F00DC5F7B /* PersonTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PersonTests.m; sourceTree = "<group>"; };
+		54DE616C170358B400DC5F7B /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		54DE616D170358B400DC5F7B /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		54DE6170170367F600DC5F7B /* AnswerTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnswerTests.h; sourceTree = "<group>"; };
+		54DE6171170367F600DC5F7B /* AnswerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnswerTests.m; sourceTree = "<group>"; };
+		54DE6173170368A500DC5F7B /* Answer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Answer.h; sourceTree = "<group>"; };
+		54DE6174170368A500DC5F7B /* Answer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Answer.m; sourceTree = "<group>"; };
+		57CFCDCF170234BA00DEEB87 /* QuestionTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QuestionTests.h; sourceTree = "<group>"; };
+		57CFCDD0170234BA00DEEB87 /* QuestionTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QuestionTests.m; sourceTree = "<group>"; };
+		57CFCDD21702354700DEEB87 /* Question.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Question.h; sourceTree = "<group>"; };
+		57CFCDD31702354700DEEB87 /* Question.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Question.m; sourceTree = "<group>"; };
 		57E39AE816FF8E1D00D686E9 /* BrowseOverflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrowseOverflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		57E39AEB16FF8E1D00D686E9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		57E39AED16FF8E1D00D686E9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -61,8 +84,10 @@
 		57E39B1516FF8E1E00D686E9 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
 		57E39B1D16FF8E1E00D686E9 /* BrowseOverflowTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BrowseOverflowTests-Info.plist"; sourceTree = "<group>"; };
 		57E39B1F16FF8E1E00D686E9 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		57E39B2116FF8E1E00D686E9 /* BrowseOverflowTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BrowseOverflowTests.h; sourceTree = "<group>"; };
-		57E39B2216FF8E1E00D686E9 /* BrowseOverflowTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BrowseOverflowTests.m; sourceTree = "<group>"; };
+		57E39B2C16FF97DE00D686E9 /* TopicTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TopicTests.h; sourceTree = "<group>"; };
+		57E39B2D16FF97DE00D686E9 /* TopicTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TopicTests.m; sourceTree = "<group>"; };
+		57E39B3016FF985400D686E9 /* Topic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Topic.h; sourceTree = "<group>"; };
+		57E39B3116FF985400D686E9 /* Topic.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Topic.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,12 +149,13 @@
 			children = (
 				57E39AFA16FF8E1D00D686E9 /* AppDelegate.h */,
 				57E39AFB16FF8E1D00D686E9 /* AppDelegate.m */,
-				57E39B0316FF8E1D00D686E9 /* MasterViewController.h */,
-				57E39B0416FF8E1D00D686E9 /* MasterViewController.m */,
+				57E39B2F16FF984500D686E9 /* DataModel */,
 				57E39B0616FF8E1D00D686E9 /* DetailViewController.h */,
 				57E39B0716FF8E1D00D686E9 /* DetailViewController.m */,
-				57E39B0916FF8E1D00D686E9 /* MasterViewController.xib */,
 				57E39B0C16FF8E1D00D686E9 /* DetailViewController.xib */,
+				57E39B0316FF8E1D00D686E9 /* MasterViewController.h */,
+				57E39B0416FF8E1D00D686E9 /* MasterViewController.m */,
+				57E39B0916FF8E1D00D686E9 /* MasterViewController.xib */,
 				57E39AF216FF8E1D00D686E9 /* Supporting Files */,
 			);
 			path = BrowseOverflow;
@@ -152,9 +178,15 @@
 		57E39B1B16FF8E1E00D686E9 /* BrowseOverflowTests */ = {
 			isa = PBXGroup;
 			children = (
-				57E39B2116FF8E1E00D686E9 /* BrowseOverflowTests.h */,
-				57E39B2216FF8E1E00D686E9 /* BrowseOverflowTests.m */,
+				54DE6170170367F600DC5F7B /* AnswerTests.h */,
+				54DE6171170367F600DC5F7B /* AnswerTests.m */,
+				54DE61691703567F00DC5F7B /* PersonTests.h */,
+				54DE616A1703567F00DC5F7B /* PersonTests.m */,
+				57CFCDCF170234BA00DEEB87 /* QuestionTests.h */,
+				57CFCDD0170234BA00DEEB87 /* QuestionTests.m */,
 				57E39B1C16FF8E1E00D686E9 /* Supporting Files */,
+				57E39B2C16FF97DE00D686E9 /* TopicTests.h */,
+				57E39B2D16FF97DE00D686E9 /* TopicTests.m */,
 			);
 			path = BrowseOverflowTests;
 			sourceTree = "<group>";
@@ -166,6 +198,21 @@
 				57E39B1E16FF8E1E00D686E9 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		57E39B2F16FF984500D686E9 /* DataModel */ = {
+			isa = PBXGroup;
+			children = (
+				54DE6173170368A500DC5F7B /* Answer.h */,
+				54DE6174170368A500DC5F7B /* Answer.m */,
+				54DE616C170358B400DC5F7B /* Person.h */,
+				54DE616D170358B400DC5F7B /* Person.m */,
+				57CFCDD21702354700DEEB87 /* Question.h */,
+				57CFCDD31702354700DEEB87 /* Question.m */,
+				57E39B3016FF985400D686E9 /* Topic.h */,
+				57E39B3116FF985400D686E9 /* Topic.m */,
+			);
+			path = DataModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -283,6 +330,10 @@
 				57E39AFC16FF8E1D00D686E9 /* AppDelegate.m in Sources */,
 				57E39B0516FF8E1D00D686E9 /* MasterViewController.m in Sources */,
 				57E39B0816FF8E1D00D686E9 /* DetailViewController.m in Sources */,
+				57E39B3216FF985400D686E9 /* Topic.m in Sources */,
+				57CFCDD41702354700DEEB87 /* Question.m in Sources */,
+				54DE616E170358B400DC5F7B /* Person.m in Sources */,
+				54DE6175170368A500DC5F7B /* Answer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +341,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				57E39B2316FF8E1E00D686E9 /* BrowseOverflowTests.m in Sources */,
+				57E39B2E16FF97DE00D686E9 /* TopicTests.m in Sources */,
+				57E39B3316FF985400D686E9 /* Topic.m in Sources */,
+				57CFCDD1170234BA00DEEB87 /* QuestionTests.m in Sources */,
+				57CFCDD51702354700DEEB87 /* Question.m in Sources */,
+				54DE616B1703567F00DC5F7B /* PersonTests.m in Sources */,
+				54DE616F170358B400DC5F7B /* Person.m in Sources */,
+				54DE6172170367F600DC5F7B /* AnswerTests.m in Sources */,
+				54DE6176170368A500DC5F7B /* Answer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -471,6 +529,7 @@
 				57E39B2816FF8E1E00D686E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		57E39B2916FF8E1E00D686E9 /* Build configuration list for PBXNativeTarget "BrowseOverflowTests" */ = {
 			isa = XCConfigurationList;
@@ -479,6 +538,7 @@
 				57E39B2B16FF8E1E00D686E9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
