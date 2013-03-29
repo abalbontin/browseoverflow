@@ -12,6 +12,12 @@
 
 NSString *StackOverflowManagerError = @"StackOverflowManagerError";
 
+@interface StackOverflowManager (Private)
+
+- (void)tellDelegateAboutQuestionSearchError:(NSError *)underlyingError;
+
+@end
+
 @implementation StackOverflowManager
 
 - (void)setDelegate:(id<StackOverflowManagerDelegate>)newDelegate {
@@ -35,12 +41,7 @@ NSString *StackOverflowManagerError = @"StackOverflowManagerError";
 
 - (void)searchingForQuestionsFailedWithError:(NSError *)error {
     
-    NSDictionary *errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
-    NSError *reportableError = [NSError errorWithDomain:StackOverflowManagerError
-                                                   code:StackOverflowManagerErrorQuestionSearchCode
-                                               userInfo:errorInfo];
-    
-    [self.delegate fetchingQuestionsFailedWithError:reportableError];
+    [self tellDelegateAboutQuestionSearchError:error];
     
 }
 
@@ -51,20 +52,26 @@ NSString *StackOverflowManagerError = @"StackOverflowManagerError";
     
     if (!questions) {
     
-        NSDictionary *errorInfo = nil;        
-        if (error) {
-            
-            errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
-            
-        }
-        
-        NSError *reportableError = [NSError errorWithDomain:StackOverflowManagerError
-                                                       code:StackOverflowManagerErrorQuestionSearchCode
-                                                   userInfo:errorInfo];
-        
-        [self.delegate fetchingQuestionsFailedWithError:reportableError];
+        [self tellDelegateAboutQuestionSearchError:error];
         
     }
+    
+}
+
+- (void)tellDelegateAboutQuestionSearchError:(NSError *)underlyingError {
+    
+    NSDictionary *errorInfo = nil;
+    if (underlyingError) {
+        
+        errorInfo = [NSDictionary dictionaryWithObject:underlyingError forKey:NSUnderlyingErrorKey];
+        
+    }
+    
+    NSError *reportableError = [NSError errorWithDomain:StackOverflowManagerError
+                                                   code:StackOverflowManagerErrorQuestionSearchCode
+                                               userInfo:errorInfo];
+    
+    [self.delegate fetchingQuestionsFailedWithError:reportableError];
     
 }
 
