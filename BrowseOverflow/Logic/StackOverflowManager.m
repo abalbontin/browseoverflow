@@ -9,6 +9,8 @@
 #import "StackOverflowManager.h"
 #import "Topic.h"
 
+NSString *StackOverflowManagerError = @"StackOverflowManagerError";
+
 @implementation StackOverflowManager
 
 - (void)setDelegate:(id<StackOverflowManagerDelegate>)newDelegate {
@@ -42,5 +44,3 @@
 }
 
 @end
-
-NSString *StackOverflowManagerError = @"StackOverflowManagerError";

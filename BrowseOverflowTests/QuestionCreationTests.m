@@ -16,12 +16,19 @@
 
 @private
     StackOverflowManager *mgr;
+    MockStackOverflowManagerDelegate *delegate;
+    NSError *underlyingError;
 
 }
 
 - (void)setUp {
     
     mgr = [[StackOverflowManager alloc] init];
+    
+    delegate = [[MockStackOverflowManagerDelegate alloc] init];
+    mgr.delegate = delegate;
+    underlyingError = [NSError errorWithDomain:@"Test domain" code:0 userInfo:nil];
+    [mgr searchingForQuestionsFailedWithError:underlyingError];
     
 }
 
@@ -46,8 +53,6 @@
 
 - (void)testConformingObjectCanBeDelegate {
     
-    id <StackOverflowManagerDelegate> delegate = [[MockStackOverflowManagerDelegate alloc] init];
-    
     STAssertNoThrow(mgr.delegate = delegate, @"Object conforming to the delegate protocol should be used as the delegate");
     
 }
@@ -66,21 +71,11 @@
 
 - (void)testErrorReturnedToDelegateIsNotErrorNotifiedByCommunicator {
     
-    MockStackOverflowManagerDelegate *delegate = [[MockStackOverflowManagerDelegate alloc] init];
-    mgr.delegate = delegate;
-    NSError *underlyingError = [NSError errorWithDomain:@"Test domain" code:0 userInfo:nil];
-    [mgr searchingForQuestionsFailedWithError:underlyingError];
-    
     STAssertFalse(underlyingError == [delegate fetchError], @"Error should be at the correct level of abstraction");
     
 }
 
 - (void)testErrorReturnedToDelegateDocumentsUnderlyingError {
-    
-    MockStackOverflowManagerDelegate *delegate = [[MockStackOverflowManagerDelegate alloc] init];
-    mgr.delegate = delegate;
-    NSError *underlyingError = [NSError errorWithDomain:@"Test domain" code:0 userInfo:nil];
-    [mgr searchingForQuestionsFailedWithError: underlyingError];
     
     STAssertEqualObjects([[[delegate fetchError] userInfo] objectForKey:NSUnderlyingErrorKey], underlyingError,
                          @"The underlying error should be available to client code");
