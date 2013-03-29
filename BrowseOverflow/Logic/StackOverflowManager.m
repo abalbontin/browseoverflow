@@ -45,8 +45,26 @@ NSString *StackOverflowManagerError = @"StackOverflowManagerError";
 }
 
 - (void)receivedQuestionsJSON:(NSString *)objectNotation {
- 
-    NSArray *questions = [self.questionBuilder questionsFromJSON:objectNotation error:NULL];
+    
+    NSError *error = nil;
+    NSArray *questions = [self.questionBuilder questionsFromJSON:objectNotation error:&error];
+    
+    if (!questions) {
+    
+        NSDictionary *errorInfo = nil;        
+        if (error) {
+            
+            errorInfo = [NSDictionary dictionaryWithObject:error forKey:NSUnderlyingErrorKey];
+            
+        }
+        
+        NSError *reportableError = [NSError errorWithDomain:StackOverflowManagerError
+                                                       code:StackOverflowManagerErrorQuestionSearchCode
+                                                   userInfo:errorInfo];
+        
+        [self.delegate fetchingQuestionsFailedWithError:reportableError];
+        
+    }
     
 }
 

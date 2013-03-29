@@ -19,6 +19,7 @@
     StackOverflowManager *mgr;
     MockStackOverflowManagerDelegate *delegate;
     NSError *underlyingError;
+    FakeQuestionBuilder *questionBuilder;
 
 }
 
@@ -29,13 +30,20 @@
     delegate = [[MockStackOverflowManagerDelegate alloc] init];
     mgr.delegate = delegate;
     underlyingError = [NSError errorWithDomain:@"Test domain" code:0 userInfo:nil];
-    [mgr searchingForQuestionsFailedWithError:underlyingError];
+    
+    questionBuilder = [[FakeQuestionBuilder alloc] init];
+    questionBuilder.arrayToReturn = nil;
+    questionBuilder.errorToSet = underlyingError;
+    mgr.questionBuilder = questionBuilder;
     
 }
 
 - (void)tearDown {
     
     mgr = nil;
+    delegate = nil;
+    underlyingError = nil;
+    questionBuilder = nil;
     
 }
 
@@ -72,11 +80,15 @@
 
 - (void)testErrorReturnedToDelegateIsNotErrorNotifiedByCommunicator {
     
+    [mgr searchingForQuestionsFailedWithError:underlyingError];
+    
     STAssertFalse(underlyingError == [delegate fetchError], @"Error should be at the correct level of abstraction");
     
 }
 
 - (void)testErrorReturnedToDelegateDocumentsUnderlyingError {
+    
+    [mgr searchingForQuestionsFailedWithError:underlyingError];
     
     STAssertEqualObjects([[[delegate fetchError] userInfo] objectForKey:NSUnderlyingErrorKey], underlyingError,
                          @"The underlying error should be available to client code");
@@ -85,13 +97,21 @@
 
 - (void)testQuestionJSONIsPassedToQuestionBuilder {
     
-    FakeQuestionBuilder *builder = [[FakeQuestionBuilder alloc] init];
-    mgr.questionBuilder = builder;
     [mgr receivedQuestionsJSON:@"Fake JSON"];
     
-    STAssertEqualObjects(builder.JSON, @"Fake JSON", @"Downloaded JSON is sent to the builder");
+    STAssertEqualObjects(questionBuilder.JSON, @"Fake JSON", @"Downloaded JSON is sent to the builder");
     mgr.questionBuilder = nil;
     
+}
+
+- (void)testDelegateNotifiedOfErrorWhenQuestionBuilderFails {
+    
+    [mgr receivedQuestionsJSON:@"Fake JSON"];
+    
+    STAssertNotNil([[[delegate fetchError] userInfo] objectForKey:NSUnderlyingErrorKey],
+                   @"The delegate should have found out about the error");
+    mgr.questionBuilder = nil;
+
 }
 
 @end
