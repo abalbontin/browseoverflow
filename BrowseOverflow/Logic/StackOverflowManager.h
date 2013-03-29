@@ -10,6 +10,7 @@
 #import "StackOverflowCommunicator.h"
 
 @class Topic;
+@class QuestionBuilder;
 
 @protocol StackOverflowManagerDelegate;
 
@@ -24,15 +25,16 @@ enum {
 
 @property (weak, nonatomic) id <StackOverflowManagerDelegate> delegate;
 @property (strong) StackOverflowCommunicator *communicator;
+@property (strong) QuestionBuilder *questionBuilder;
 
 - (void)fetchQuestionsOnTopic:(Topic *)topic;
-
 - (void)searchingForQuestionsFailedWithError:(NSError *)error;
+- (void)receivedQuestionsJSON:(NSString *)objectNotation;
 
 @end
 
 @protocol StackOverflowManagerDelegate <NSObject>
 
-- (void)fetchingQuestionsOnTopic:(Topic *)topic failedWithError:(NSError *)error;
+- (void)fetchingQuestionsFailedWithError:(NSError *)error;
 
 @end

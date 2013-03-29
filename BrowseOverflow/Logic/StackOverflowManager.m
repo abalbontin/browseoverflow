@@ -8,6 +8,7 @@
 
 #import "StackOverflowManager.h"
 #import "Topic.h"
+#import "QuestionBuilder.h"
 
 NSString *StackOverflowManagerError = @"StackOverflowManagerError";
 
@@ -39,7 +40,13 @@ NSString *StackOverflowManagerError = @"StackOverflowManagerError";
                                                    code:StackOverflowManagerErrorQuestionSearchCode
                                                userInfo:errorInfo];
     
-    [self.delegate fetchingQuestionsOnTopic:nil failedWithError:reportableError];
+    [self.delegate fetchingQuestionsFailedWithError:reportableError];
+    
+}
+
+- (void)receivedQuestionsJSON:(NSString *)objectNotation {
+ 
+    NSArray *questions = [self.questionBuilder questionsFromJSON:objectNotation error:NULL];
     
 }
 
