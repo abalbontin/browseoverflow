@@ -54,6 +54,10 @@ NSString *StackOverflowManagerError = @"StackOverflowManagerError";
     
         [self tellDelegateAboutQuestionSearchError:error];
         
+    } else {
+     
+        [self.delegate didReceiveQuestions:questions];
+        
     }
     
 }

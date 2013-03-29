@@ -12,6 +12,7 @@
 #import "MockStackOverflowCommunicator.h"
 #import "Topic.h"
 #import "FakeQuestionBuilder.h"
+#import "Question.h"
 
 @implementation QuestionCreationTests {
 
@@ -20,6 +21,7 @@
     MockStackOverflowManagerDelegate *delegate;
     NSError *underlyingError;
     FakeQuestionBuilder *questionBuilder;
+    NSArray *questionArray;
 
 }
 
@@ -36,6 +38,9 @@
     questionBuilder.errorToSet = underlyingError;
     mgr.questionBuilder = questionBuilder;
     
+    Question *question = [[Question alloc] init];
+    questionArray = [NSArray arrayWithObject:question];
+    
 }
 
 - (void)tearDown {
@@ -44,6 +49,7 @@
     delegate = nil;
     underlyingError = nil;
     questionBuilder = nil;
+    questionArray = nil;
     
 }
 
@@ -112,6 +118,33 @@
                    @"The delegate should have found out about the error");
     mgr.questionBuilder = nil;
 
+}
+
+- (void)testDelegateNotToldAboutErrorWhenQuestionsReceived {
+    
+    questionBuilder.arrayToReturn = questionArray;
+    [mgr receivedQuestionsJSON: @"Fake JSON"];
+    
+    STAssertNil([delegate fetchError], @"No error should be received on success");
+    
+}
+
+- (void)testDelegateReceivesTheQuestionsDiscoveredByManager {
+    
+    questionBuilder.arrayToReturn = questionArray;
+    [mgr receivedQuestionsJSON: @"Fake JSON"];
+    
+    STAssertEqualObjects([delegate receivedQuestions], questionArray, @"The manager should have sent its questions to the delegate");
+
+}
+
+- (void)testEmptyArrayIsPassedToDelegate {
+    
+    questionBuilder.arrayToReturn = [NSArray array];
+    [mgr receivedQuestionsJSON:@"Fake JSON"];
+    
+    STAssertEqualObjects([delegate receivedQuestions], [NSArray array], @"Returning an empty array is not an error");
+    
 }
 
 @end
