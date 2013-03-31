@@ -112,16 +112,15 @@ static NSString *questionJSON = @"{" @"\"total\": 1,"
     
 }
 
+- (void)testJSONWithOneQuestionReturnsOneQuestionObject {
+    
+    NSError *error = nil;
+    NSArray *questions = [questionBuilder questionsFromJSON:questionJSON error:&error];
+    STAssertEquals([questions count], (NSUInteger)1, @"The builder should have created a question");
+    
+}
+
 // TODO: abalbontin: Resolver.
-//- (void)testJSONWithOneQuestionReturnsOneQuestionObject {
-//    
-//    NSError *error = nil;
-//    NSArray *questions = [questionBuilder questionsFromJSON:questionJSON error:&error];
-//    STAssertEquals([questions count], (NSUInteger)1, @"The builder should have created a question");
-//    
-//}
-//
-//
 //- (void)testQuestionCreatedFromJSONHasPropertiesPresentedInJSON {
 //    
 //    STAssertEquals(question.questionID, 2817980, @"The question ID should match the data we sent");

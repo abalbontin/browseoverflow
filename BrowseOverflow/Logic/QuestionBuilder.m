@@ -23,10 +23,17 @@ NSString *QuestionBuilderErrorDomain = @"QuestionBuilderErrorDomain";
     NSDictionary *parsedObject = (id)jsonObject;
     
     if (parsedObject == nil) {
-    
+        
         if (error != NULL) {
+        
+            NSDictionary *errorInfo = nil;
+            if (localError) {
+                
+                errorInfo = [NSDictionary dictionaryWithObject:localError forKey:NSUnderlyingErrorKey];
+                
+            }
             
-            *error = [NSError errorWithDomain:QuestionBuilderErrorDomain code:QuestionBuilderInvalidJSONError userInfo:nil];
+            *error = [NSError errorWithDomain:QuestionBuilderErrorDomain code:QuestionBuilderInvalidJSONError userInfo:errorInfo];
             
         }
         
@@ -48,7 +55,7 @@ NSString *QuestionBuilderErrorDomain = @"QuestionBuilderErrorDomain";
         
     }
     
-    return nil;
+    return questions;
     
 }
 
