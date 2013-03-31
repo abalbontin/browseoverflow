@@ -10,11 +10,13 @@
 
 @class Question;
 @class Answer;
+@class Person;
 
 @interface QuestionTests : SenTestCase
     
 @property Question *question;
 @property Answer *lowScore;
 @property Answer *highScore;
+@property Person *asker;
 
 @end

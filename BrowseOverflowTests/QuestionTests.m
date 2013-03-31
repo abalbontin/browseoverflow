@@ -9,6 +9,7 @@
 #import "QuestionTests.h"
 #import "Question.h"
 #import "Answer.h"
+#import "Person.h"
 
 @implementation QuestionTests
 
@@ -18,6 +19,7 @@
     self.question.date = [NSDate distantPast];
     self.question.title = @"Do iPhones also dream of electric sheep?";
     self.question.score = 42;
+    self.question.questionID = 17;
     
     Answer *accepted = [[Answer alloc] init];
     accepted.score = 1;
@@ -32,9 +34,8 @@
     self.highScore.score = 4;
     [self.question addAnswer:self.highScore];
 
-    // TODO: abalbontin: Resolver.
-//    asker = [[Person alloc] initWithName: @"Graham Lee" avatarLocation:@"http://example.com/avatar.png"];
-//    question.asker = asker;
+    self.asker = [[Person alloc] initWithName: @"Graham Lee" avatarLocation:@"http://example.com/avatar.png"];
+    self.question.asker = self.asker;
     
 }
 
@@ -43,15 +44,13 @@
     self.question = nil;
     self.lowScore = nil;
     self.highScore = nil;
-
+    self.asker = nil;
+    
 }
 
 - (void)testQuestionHasADate {
     
-    NSDate *testDate = [NSDate distantPast];
-    self.question.date = testDate;
-    
-    STAssertEqualObjects(self.question.date, testDate, @"Question needs to provide its date");
+    STAssertEqualObjects(self.question.date, [NSDate distantPast], @"Question needs to provide its date");
     
 }
 
@@ -81,6 +80,12 @@
     
 }
 
+- (void)testQuestionsHasIdentity {
+    
+    STAssertEquals(self.question.questionID, 17, @"Questions need a numeric identifier");
+    
+}
+
 - (void)testHighScoreAnswerBeforeLow {
     
     NSArray *answers = self.question.answers;
@@ -91,11 +96,10 @@
 
 }
 
-// TODO: abalbontin: Resolver.
-//- (void)testQuestionWasAskedBySomeone {
-//    
-//    STAssertEqualObjects(question.asker, asker, @"Question should keep track of who asked it.");
-//    
-//}
+- (void)testQuestionWasAskedBySomeone {
+    
+    STAssertEqualObjects(self.question.asker, self.asker, @"Question should keep track of who asked it.");
+    
+}
 
 @end
