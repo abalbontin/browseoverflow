@@ -21,7 +21,9 @@
     MockStackOverflowManagerDelegate *delegate;
     NSError *underlyingError;
     FakeQuestionBuilder *questionBuilder;
+    Question *questionToFetch;
     NSArray *questionArray;
+    MockStackOverflowCommunicator *communicator;
 
 }
 
@@ -38,8 +40,12 @@
     questionBuilder.errorToSet = underlyingError;
     mgr.questionBuilder = questionBuilder;
     
-    Question *question = [[Question alloc] init];
-    questionArray = [NSArray arrayWithObject:question];
+    questionToFetch = [[Question alloc] init];
+    // TODO: abalbontin: Resolver.
+//    questionToFetch.questionID = 1234;
+    questionArray = [NSArray arrayWithObject:questionToFetch];
+    communicator = [[MockStackOverflowCommunicator alloc] init];
+    mgr.communicator = communicator;
     
 }
 
@@ -49,7 +55,9 @@
     delegate = nil;
     underlyingError = nil;
     questionBuilder = nil;
+    questionToFetch = nil;
     questionArray = nil;
+    communicator = nil;
     
 }
 
@@ -73,10 +81,7 @@
 }
 
 - (void)testAskingForQuestionsMeansRequestingData {
-    
-    MockStackOverflowCommunicator *communicator = [[MockStackOverflowCommunicator alloc] init];
-    mgr.communicator = communicator;
-    
+        
     Topic *topic = [[Topic alloc] initWithName:@"iPhone" tag:@"iphone"];
     [mgr fetchQuestionsOnTopic:topic];
     
@@ -146,5 +151,39 @@
     STAssertEqualObjects([delegate receivedQuestions], [NSArray array], @"Returning an empty array is not an error");
     
 }
+
+// TODO: abalbontin: Resolver.
+//- (void)testAskingForQuestionBodyMeansRequestingData {
+//    
+//    [mgr fetchBodyForQuestion:questionToFetch];
+//    
+//    STAssertTrue([communicator wasAskedToFetchBody], @"The communicator should need to retrieve data for the question body");
+//    
+//}
+//
+//- (void)testDelegateNotifiedOfFailureToFetchQuestion {
+//    
+//    [mgr fetchingQuestionBodyFailedWithError:underlyingError];
+//    
+//    STAssertNotNil([[[delegate fetchError] userInfo] objectForKey:NSUnderlyingErrorKey], @"Delegate should have found out about this error");
+//    
+//}
+//
+//- (void)testManagerPassesRetrievedQuestionBodyToQuestionBuilder {
+//    
+//    [mgr receivedQuestionBodyJSON:@"Fake JSON"];
+//    
+//    STAssertEqualObjects(questionBuilder.JSON, @"Fake JSON", @"Successfully-retrieved data should be passed to the builder");
+//    
+//}
+//
+//- (void)testManagerPassesQuestionItWasSentToQuestionBuilderForFillingIn {
+//    
+//    [mgr fetchBodyForQuestion:questionToFetch];
+//    [mgr receivedQuestionBodyJSON:@"Fake JSON"];
+//    
+//    STAssertEqualObjects(questionBuilder.questionToFill, questionToFetch, @"The question should have been passed to the builder");
+//    
+//}
 
 @end

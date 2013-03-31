@@ -31,6 +31,10 @@
     self.highScore = [[Answer alloc] init];
     self.highScore.score = 4;
     [self.question addAnswer:self.highScore];
+
+    // TODO: abalbontin: Resolver.
+//    asker = [[Person alloc] initWithName: @"Graham Lee" avatarLocation:@"http://example.com/avatar.png"];
+//    question.asker = asker;
     
 }
 
@@ -86,5 +90,12 @@
     STAssertTrue(highIndex < lowIndex, @"High-scoring answer comes first");
 
 }
+
+// TODO: abalbontin: Resolver.
+//- (void)testQuestionWasAskedBySomeone {
+//    
+//    STAssertEqualObjects(question.asker, asker, @"Question should keep track of who asked it.");
+//    
+//}
 
 @end
