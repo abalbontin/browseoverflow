@@ -53,4 +53,22 @@
     
 }
 
+- (void)testRealJSONWithoutQuestionsArrayIsError {
+    
+    NSString *jsonString = @"{ \"noquestions\": true }";
+    
+    STAssertNil([questionBuilder questionsFromJSON:jsonString error:NULL], @"No questions to parse in this JSON");
+    
+}
+
+- (void)testRealJSONWithoutQuestionsReturnsMissingDataError {
+    
+    NSString *jsonString = @"{ \"noquestions\": true }";
+    NSError *error = nil;
+    [questionBuilder questionsFromJSON:jsonString error:&error];
+    
+    STAssertEquals([error code], QuestionBuilderMissingDataError, @"This case should not be an invalid JSON error");
+    
+}
+
 @end

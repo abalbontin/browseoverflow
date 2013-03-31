@@ -11,7 +11,8 @@
 extern NSString *QuestionBuilderErrorDomain;
 enum {
     
-    QuestionBuilderInvalidJSONError
+    QuestionBuilderInvalidJSONError,
+    QuestionBuilderMissingDataError
     
 };
 
