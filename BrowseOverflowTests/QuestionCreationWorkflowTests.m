@@ -6,7 +6,7 @@
 //  Copyright (c) 2013 Álvaro Balbontín Gutiérrez. All rights reserved.
 //
 
-#import "QuestionCreationTests.h"
+#import "QuestionCreationWorkflowTests.h"
 #import "StackOverflowManager.h"
 #import "MockStackOverflowManagerDelegate.h"
 #import "MockStackOverflowCommunicator.h"
@@ -14,7 +14,7 @@
 #import "FakeQuestionBuilder.h"
 #import "Question.h"
 
-@implementation QuestionCreationTests {
+@implementation QuestionCreationWorkflowTests {
 
 @private
     StackOverflowManager *mgr;
