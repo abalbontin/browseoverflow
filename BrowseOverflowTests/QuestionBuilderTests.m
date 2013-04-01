@@ -144,21 +144,21 @@ static NSString *questionJSON = @"{" @"\"total\": 1,"
     
 }
 
+- (void)testBuildingQuestionBodyWithNoDataCannotBeTried {
+    
+    STAssertThrows([questionBuilder fillInDetailsForQuestion:question fromJSON:nil], @"Not receiving data should have been handled earlier");
+    
+}
+
+- (void)testBuildingQuestionBodyWithNoQuestionCannotBeTried {
+    
+    STAssertThrows([questionBuilder fillInDetailsForQuestion:nil fromJSON:questionJSON], @"No reason to expect that a nil question is passed");
+}
+
 // TODO: abalbontin: Resolver.
-//- (void)testBuildingQuestionBodyWithNoDataCannotBeTried {
-//    
-//    STAssertThrows([questionBuilder fillInDetailsForQuestion:question fromJSON:nil], @"Not receiving data should have been handled earlier");
-//    
-//}
-//
-//- (void)testBuildingQuestionBodyWithNoQuestionCannotBeTried {
-//    
-//    STAssertThrows([questionBuilder fillInDetailsForQuestion:nil fromJSON:questionJSON], @"No reason to expect that a nil question is passed");
-//}
-//
 //- (void)testNonJSONDataDoesNotCauseABodyToBeAddedToAQuestion {
 //    
-//    [questionBuilder fillInDetailsForQuestion:question fromJSON:stringIsNotJSON];
+//    [questionBuilder fillInDetailsForQuestion:question fromJSON:@"Not JSON"];
 //    
 //    STAssertNil(question.body, @"Body should not have been added");
 //
