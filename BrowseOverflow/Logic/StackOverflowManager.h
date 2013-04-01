@@ -11,6 +11,7 @@
 
 @class Topic;
 @class QuestionBuilder;
+@class Question;
 
 @protocol StackOverflowManagerDelegate;
 
@@ -30,6 +31,7 @@ enum {
 - (void)fetchQuestionsOnTopic:(Topic *)topic;
 - (void)searchingForQuestionsFailedWithError:(NSError *)error;
 - (void)receivedQuestionsJSON:(NSString *)objectNotation;
+- (void)fetchBodyForQuestion:(Question *)question;
 
 @end
 

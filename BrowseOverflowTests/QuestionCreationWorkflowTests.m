@@ -41,8 +41,7 @@
     mgr.questionBuilder = questionBuilder;
     
     questionToFetch = [[Question alloc] init];
-    // TODO: abalbontin: Resolver.
-//    questionToFetch.questionID = 1234;
+    questionToFetch.questionID = 1234;
     questionArray = [NSArray arrayWithObject:questionToFetch];
     communicator = [[MockStackOverflowCommunicator alloc] init];
     mgr.communicator = communicator;
@@ -152,15 +151,15 @@
     
 }
 
+- (void)testAskingForQuestionBodyMeansRequestingData {
+    
+    [mgr fetchBodyForQuestion:questionToFetch];
+    
+    STAssertTrue([communicator wasAskedToFetchBody], @"The communicator should need to retrieve data for the question body");
+    
+}
+
 // TODO: abalbontin: Resolver.
-//- (void)testAskingForQuestionBodyMeansRequestingData {
-//    
-//    [mgr fetchBodyForQuestion:questionToFetch];
-//    
-//    STAssertTrue([communicator wasAskedToFetchBody], @"The communicator should need to retrieve data for the question body");
-//    
-//}
-//
 //- (void)testDelegateNotifiedOfFailureToFetchQuestion {
 //    
 //    [mgr fetchingQuestionBodyFailedWithError:underlyingError];

@@ -9,6 +9,7 @@
 #import "StackOverflowManager.h"
 #import "Topic.h"
 #import "QuestionBuilder.h"
+#import "Question.h"
 
 NSString *StackOverflowManagerError = @"StackOverflowManagerError";
 
@@ -76,6 +77,12 @@ NSString *StackOverflowManagerError = @"StackOverflowManagerError";
                                                userInfo:errorInfo];
     
     [self.delegate fetchingQuestionsFailedWithError:reportableError];
+    
+}
+
+- (void)fetchBodyForQuestion:(Question *)question {
+    
+    [self.communicator searchForBodyWithQuestionID:question.questionID];
     
 }
 
