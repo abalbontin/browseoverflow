@@ -32,6 +32,7 @@ enum {
 - (void)searchingForQuestionsFailedWithError:(NSError *)error;
 - (void)receivedQuestionsJSON:(NSString *)objectNotation;
 - (void)fetchBodyForQuestion:(Question *)question;
+- (void)fetchingQuestionBodyFailedWithError:(NSError *)error;
 
 @end
 

@@ -159,15 +159,15 @@
     
 }
 
+- (void)testDelegateNotifiedOfFailureToFetchQuestion {
+    
+    [mgr fetchingQuestionBodyFailedWithError:underlyingError];
+    
+    STAssertNotNil([[[delegate fetchError] userInfo] objectForKey:NSUnderlyingErrorKey], @"Delegate should have found out about this error");
+    
+}
+
 // TODO: abalbontin: Resolver.
-//- (void)testDelegateNotifiedOfFailureToFetchQuestion {
-//    
-//    [mgr fetchingQuestionBodyFailedWithError:underlyingError];
-//    
-//    STAssertNotNil([[[delegate fetchError] userInfo] objectForKey:NSUnderlyingErrorKey], @"Delegate should have found out about this error");
-//    
-//}
-//
 //- (void)testManagerPassesRetrievedQuestionBodyToQuestionBuilder {
 //    
 //    [mgr receivedQuestionBodyJSON:@"Fake JSON"];

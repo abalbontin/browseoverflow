@@ -86,4 +86,11 @@ NSString *StackOverflowManagerError = @"StackOverflowManagerError";
     
 }
 
+
+- (void)fetchingQuestionBodyFailedWithError:(NSError *)error {
+        
+    [self tellDelegateAboutQuestionSearchError:error];
+    
+}
+
 @end
