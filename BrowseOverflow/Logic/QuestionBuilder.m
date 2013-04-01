@@ -7,6 +7,8 @@
 //
 
 #import "QuestionBuilder.h"
+#import "Question.h"
+#import "Person.h"
 
 NSString *QuestionBuilderErrorDomain = @"QuestionBuilderErrorDomain";
 
@@ -55,7 +57,25 @@ NSString *QuestionBuilderErrorDomain = @"QuestionBuilderErrorDomain";
         
     }
     
-    return questions;
+    NSMutableArray *questionsToReturn = [NSMutableArray arrayWithCapacity:[questions count]];
+    
+    for (NSDictionary *questionDictionary in questions) {
+        
+        Question *question = [[Question alloc] init];
+        question.questionID = [[questionDictionary objectForKey:@"question_id"] integerValue];
+        question.date = [NSDate dateWithTimeIntervalSince1970:[[questionDictionary objectForKey:@"creation_date"] doubleValue]];
+        question.title = [questionDictionary objectForKey:@"title"];
+        question.score = [[questionDictionary objectForKey:@"score"] integerValue];
+        NSDictionary *ownerDictionary = [questionDictionary objectForKey:@"owner"];
+        question.asker = [[Person alloc] initWithName:[ownerDictionary objectForKey:@"display_name"]
+                                       avatarLocation:[@"http://www.gravatar.com/avatar/" stringByAppendingString:
+                                                       [ownerDictionary objectForKey:@"email_hash"]]];
+        
+        [questionsToReturn addObject:question];
+        
+    }
+    
+    return [questionsToReturn copy];
     
 }
 

@@ -9,6 +9,7 @@
 #import "QuestionBuilderTests.h"
 #import "QuestionBuilder.h"
 #import "Question.h"
+#import "Person.h"
 
 static NSString *questionJSON = @"{" @"\"total\": 1,"
 @"\"page\": 1,"
@@ -120,21 +121,21 @@ static NSString *questionJSON = @"{" @"\"total\": 1,"
     
 }
 
+- (void)testQuestionCreatedFromJSONHasPropertiesPresentedInJSON {
+    
+    STAssertEquals(question.questionID, 2817980, @"The question ID should match the data we sent");
+    STAssertEquals([question.date timeIntervalSince1970], (NSTimeInterval)1273660706, @"The date of the question should match the data");
+    STAssertEqualObjects(question.title, @"Why does Keychain Services return the wrong keychain content?",
+                         @"Title should match the provided data");
+    STAssertEquals(question.score, 2, @"Score should match the data");
+    Person *asker = question.asker;
+    STAssertEqualObjects(asker.name, @"Graham Lee", @"Looks like I should have asked this question");
+    STAssertEqualObjects([asker.avatarURL absoluteString], @"http://www.gravatar.com/avatar/563290c0c1b776a315b36e863b388a0c",
+                         @"The avatar URL should be based on the supplied email hash");
+    
+}
+
 // TODO: abalbontin: Resolver.
-//- (void)testQuestionCreatedFromJSONHasPropertiesPresentedInJSON {
-//    
-//    STAssertEquals(question.questionID, 2817980, @"The question ID should match the data we sent");
-//    STAssertEquals([question.date timeIntervalSince1970], (NSTimeInterval)1273660706, @"The date of the question should match the data");
-//    STAssertEqualObjects(question.title, @"Why does Keychain Services return the wrong keychain content?",
-//                         @"Title should match the provided data");
-//    STAssertEquals(question.score, 2, @"Score should match the data");
-//    Person *asker = question.asker;
-//    STAssertEqualObjects(asker.name, @"Graham Lee", @"Looks like I should have asked this question");
-//    STAssertEqualObjects([asker.avatarURL absoluteString], @"http://www.gravatar.com/avatar/563290c0c1b776a315b36e863b388a0c",
-//                         @"The avatar URL should be based on the supplied email hash");
-//    
-//}
-//
 //- (void)testQuestionCreatedFromEmptyObjectIsStillValidObject {
 //    
 //    NSString *emptyQuestion = @"{ \"questions\": [ {} ] }";
