@@ -68,7 +68,7 @@ NSString *QuestionBuilderErrorDomain = @"QuestionBuilderErrorDomain";
         question.score = [[questionDictionary objectForKey:@"score"] integerValue];
         NSDictionary *ownerDictionary = [questionDictionary objectForKey:@"owner"];
         question.asker = [[Person alloc] initWithName:[ownerDictionary objectForKey:@"display_name"]
-                                       avatarLocation:[@"http://www.gravatar.com/avatar/" stringByAppendingString:
+                                       avatarLocation:[NSString stringWithFormat:@"http://www.gravatar.com/avatar/%@",
                                                        [ownerDictionary objectForKey:@"email_hash"]]];
         
         [questionsToReturn addObject:question];

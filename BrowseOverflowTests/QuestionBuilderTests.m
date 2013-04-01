@@ -135,16 +135,16 @@ static NSString *questionJSON = @"{" @"\"total\": 1,"
     
 }
 
+- (void)testQuestionCreatedFromEmptyObjectIsStillValidObject {
+    
+    NSString *emptyQuestion = @"{ \"questions\": [ {} ] }";
+    NSArray *questions = [questionBuilder questionsFromJSON:emptyQuestion error:NULL];
+    
+    STAssertEquals([questions count], (NSUInteger)1, @"QuestionBuilder must handle partial input");
+    
+}
+
 // TODO: abalbontin: Resolver.
-//- (void)testQuestionCreatedFromEmptyObjectIsStillValidObject {
-//    
-//    NSString *emptyQuestion = @"{ \"questions\": [ {} ] }";
-//    NSArray *questions = [questionBuilder questionsFromJSON:emptyQuestion error:NULL];
-//    
-//    STAssertEquals([questions count], (NSUInteger)1, @"QuestionBuilder must handle partial input");
-//    
-//}
-//
 //- (void)testBuildingQuestionBodyWithNoDataCannotBeTried {
 //    
 //    STAssertThrows([questionBuilder fillInDetailsForQuestion:question fromJSON:nil], @"Not receiving data should have been handled earlier");
