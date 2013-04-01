@@ -20,6 +20,7 @@
 @property NSMutableSet *answerSet;
 @property NSInteger questionID;
 @property Person *asker;
+@property (copy) NSString *body;
 
 - (void)addAnswer: (Answer *)answer;
 

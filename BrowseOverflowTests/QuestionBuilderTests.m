@@ -155,7 +155,6 @@ static NSString *questionJSON = @"{" @"\"total\": 1,"
     STAssertThrows([questionBuilder fillInDetailsForQuestion:nil fromJSON:questionJSON], @"No reason to expect that a nil question is passed");
 }
 
-// TODO: abalbontin: Resolver.
 //- (void)testNonJSONDataDoesNotCauseABodyToBeAddedToAQuestion {
 //    
 //    [questionBuilder fillInDetailsForQuestion:question fromJSON:@"Not JSON"];
