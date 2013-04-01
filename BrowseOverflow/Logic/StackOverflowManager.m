@@ -81,7 +81,8 @@ NSString *StackOverflowManagerError = @"StackOverflowManagerError";
 }
 
 - (void)fetchBodyForQuestion:(Question *)question {
-    
+
+    self.questionNeedingBody = question;
     [self.communicator searchForBodyWithQuestionID:question.questionID];
     
 }

@@ -175,14 +175,13 @@
     
 }
 
-// TODO: abalbontin: Resolver.
-//- (void)testManagerPassesQuestionItWasSentToQuestionBuilderForFillingIn {
-//    
-//    [mgr fetchBodyForQuestion:questionToFetch];
-//    [mgr receivedQuestionBodyJSON:@"Fake JSON"];
-//    
-//    STAssertEqualObjects(questionBuilder.questionToFill, questionToFetch, @"The question should have been passed to the builder");
-//    
-//}
+- (void)testManagerPassesQuestionItWasSentToQuestionBuilderForFillingIn {
+    
+    [mgr fetchBodyForQuestion:questionToFetch];
+    [mgr receivedQuestionBodyJSON:@"Fake JSON"];
+    
+    STAssertEqualObjects(questionBuilder.questionToFill, questionToFetch, @"The question should have been passed to the builder");
+    
+}
 
 @end
