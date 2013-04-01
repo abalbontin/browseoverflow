@@ -167,15 +167,15 @@
     
 }
 
+- (void)testManagerPassesRetrievedQuestionBodyToQuestionBuilder {
+    
+    [mgr receivedQuestionBodyJSON:@"Fake JSON"];
+    
+    STAssertEqualObjects(questionBuilder.JSON, @"Fake JSON", @"Successfully-retrieved data should be passed to the builder");
+    
+}
+
 // TODO: abalbontin: Resolver.
-//- (void)testManagerPassesRetrievedQuestionBodyToQuestionBuilder {
-//    
-//    [mgr receivedQuestionBodyJSON:@"Fake JSON"];
-//    
-//    STAssertEqualObjects(questionBuilder.JSON, @"Fake JSON", @"Successfully-retrieved data should be passed to the builder");
-//    
-//}
-//
 //- (void)testManagerPassesQuestionItWasSentToQuestionBuilderForFillingIn {
 //    
 //    [mgr fetchBodyForQuestion:questionToFetch];

@@ -27,12 +27,14 @@ enum {
 @property (weak, nonatomic) id <StackOverflowManagerDelegate> delegate;
 @property (strong) StackOverflowCommunicator *communicator;
 @property (strong) QuestionBuilder *questionBuilder;
+@property (strong) Question *questionNeedingBody;
 
 - (void)fetchQuestionsOnTopic:(Topic *)topic;
 - (void)searchingForQuestionsFailedWithError:(NSError *)error;
 - (void)receivedQuestionsJSON:(NSString *)objectNotation;
 - (void)fetchBodyForQuestion:(Question *)question;
 - (void)fetchingQuestionBodyFailedWithError:(NSError *)error;
+- (void)receivedQuestionBodyJSON:(NSString *)objectNotation;
 
 @end
 
@@ -40,5 +42,6 @@ enum {
 
 - (void)fetchingQuestionsFailedWithError:(NSError *)error;
 - (void)didReceiveQuestions:(NSArray *)questions;
+- (void)bodyReceivedForQuestion:(Question *)question;
 
 @end
